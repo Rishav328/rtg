@@ -26,12 +26,21 @@ Thank you! -->
 </head>
 <body>
     <video onclick="Play()" id="vid">
-        <source src="feelin.mp4" type="video/mp4">    
+        <source src="./feelin.mp4" type="video/mp4">    
     </video>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
+        swal("WELCOME!!", "Let's Have a beautiful tour of the world to see the beautiful things")
         function Play() {
             document.getElementById('vid').play();
+        }
+        window.onclick = () => {
+            document.getElementById('vid').play();
+        }
+        document.getElementById('vid').addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            window.location.href = "dataL.html"
         }
     </script>
 </body>
